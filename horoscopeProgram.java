@@ -4,7 +4,7 @@ import java.io.*;
 class Compare {
     public String starHoros(int dayBirth,int monthBirth) {
 	String tmp;
-//	++monthBirth;
+	++monthBirth;
 	int dayAndMonth;
 	String starHoroscope="";
 	if (dayBirth<10)
@@ -12,16 +12,16 @@ class Compare {
 	else
 	    tmp=""+monthBirth+""+dayBirth+"";
 	dayAndMonth=Integer.parseInt(tmp);
-	Boolean[] dateStar={dayAndMonth<=119&&dayAndMonth>=021,dayAndMonth<=220&&dayAndMonth>=120,dayAndMonth<320 && dayAndMonth>221,dayAndMonth<421 && dayAndMonth>321,dayAndMonth<521 && dayAndMonth>422,dayAndMonth<622 && dayAndMonth>522,dayAndMonth<722 && dayAndMonth>623,dayAndMonth<822 && dayAndMonth>722,dayAndMonth<923 && dayAndMonth>824,dayAndMonth<1022 && dayAndMonth>924,dayAndMonth<1121 && dayAndMonth>1023};
+	Boolean[] dateStar={dayAndMonth<=219&&dayAndMonth>=121,dayAndMonth<=320&&dayAndMonth>=220,dayAndMonth<=420 && dayAndMonth>=321,dayAndMonth<=521 && dayAndMonth>=421,dayAndMonth<=621 && dayAndMonth>=522,dayAndMonth<=722 && dayAndMonth>=622,dayAndMonth<=822 && dayAndMonth>=723,dayAndMonth<=922 && dayAndMonth>=822,dayAndMonth<=1023 && dayAndMonth>=924,dayAndMonth<=1122 && dayAndMonth>=1024,dayAndMonth<=1221 && dayAndMonth>=1123};
 	    String[] star={"Aquarius","Pisces","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagitarius"};
 for(int i=0;i<11;i++) {
     if(dateStar[i]==true)
 	starHoroscope=star[i];
-    else {
-	if(monthBirth==0)
+    else
+	if(monthBirth==1)
 	    monthBirth+=12;
-	dayAndMonth=Integer.parseInt(""+monthBirth+""+dayBirth+"");
-	if(dayAndMonth=1220&&dayAndMonth=1122)
+	dayAndMonth=Integer.parseInt(""+monthBirth+""+0+""+dayBirth+"");
+	if(dayAndMonth<1320&&dayAndMonth>1222)
 	    starHoroscope="Capricorn";
     }
 }
