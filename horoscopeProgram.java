@@ -16,13 +16,13 @@ class Compare {
 	    String[] star={"Aquarius","Pisces","Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagitarius"};
 for(int i=0;i<11;i++) {
     if(dateStar[i]==true)
-	starHoroscope+=star[i];
+	starHoroscope=star[i];
     else {
 	if(monthBirth==0)
 	    monthBirth+=12;
 	dayAndMonth=Integer.parseInt(""+monthBirth+""+dayBirth+"");
-	if(dayAndMonth<=1220&&dayAndMonth>=1122)
-	    starHoroscope+=star[i];
+	if(dayAndMonth=1220&&dayAndMonth=1122)
+	    starHoroscope="Capricorn";
     }
 }
 return starHoroscope;
