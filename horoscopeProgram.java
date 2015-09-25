@@ -21,7 +21,7 @@ for(int i=0;i<11;i++) {
 	if(monthBirth==1)
 	    monthBirth+=12;
 	dayAndMonth=Integer.parseInt(""+monthBirth+""+0+""+dayBirth+"");
-	if(dayAndMonth<1320&&dayAndMonth>1222)
+	if(dayAndMonth<=1320&&dayAndMonth>=1222)
 	    starHoroscope="Capricorn";
     }
 }
