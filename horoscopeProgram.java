@@ -3,12 +3,13 @@ import java.io.*;
 //import java.util.ArrayList;
 class Compare {
     public String starHoros(int dayBirth,int monthBirth) {
+
 	String tmp;
 	++monthBirth;
 	int dayAndMonth;
 	String starHoroscope="";
 	if (dayBirth<10)
-	    tmp=""+monthBirth+"0"+dayBirth+"";
+	    tmp=""+monthBirth+""+0+""+dayBirth+"";
 	else
 	    tmp=""+monthBirth+""+dayBirth+"";
 	dayAndMonth=Integer.parseInt(tmp);
@@ -21,13 +22,21 @@ for(int i=0;i<11;i++) {
 	if(monthBirth==1)
 	    monthBirth+=12;
 	dayAndMonth=Integer.parseInt(""+monthBirth+""+0+""+dayBirth+"");
-	if(dayAndMonth<=1320&&dayAndMonth>=1222)
+	if(dayAndMonth<1320&&dayAndMonth>1222)
 	    starHoroscope="Capricorn";
     }
-}
 return starHoroscope;
 }
-
+public String shioHoros(int year) {
+    String[] shioStar={"Tikus","Kerbau","Harimau","Kelinci","Naga","Ular","Kuda","Kambing","Monyet","Ayam","Anjing","Babi"};
+    int[] yearStart={1924,1936,1948,1960,1972,1984,1996,2008};
+    String shio="";
+    for(int i=0;i<=12;i++) {
+	if(year==yearStart[0]+i||year==yearStart[1]+i||year==yearStart[2]+i||year==yearStart[3]+i||year==yearStart[4]+i||year==yearStart[5]+i||year==yearStart[6]+i||year==yearStart[7]+i)
+	    shio=shioStar[i];
+    }
+    return shio;
+}
 }
 public class horoscopeProgram{
     public static void main(String[] args) {
@@ -53,10 +62,15 @@ public class horoscopeProgram{
 	int year=calendar.get(Calendar.YEAR);
 	int month = calendar.get(Calendar.MONTH);
 	int date= calendar.get(Calendar.DAY_OF_MONTH);
+	if(date<=30||date<=31||date<=29&&month<=11) {
 	//try print of them
-	System.out.println(date+"-"+month+"-"+year);
+//	System.out.println(date+"-"+month+"-"+year);
 	String star=HorosComp.starHoros(date,month);
-	System.out.println(star);
+	String shio=HorosComp.shioHoros(year);
+	System.out.println("Bintang: "+star+" Shio: "+shio);
+	}
+	else
+	    System.out.println("You inputing wrong date or month");
 
     }
 }
